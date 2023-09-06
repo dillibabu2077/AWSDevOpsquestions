@@ -1,0 +1,360 @@
+1) What are the benefits of cloud computing? 
+A) • Cost: You do not have to put up-front investment, and in the cloud you pay-as-you-go. This 
+drastically reduces cost on IT infrastructure. 
+Agile: Anything you get from the cloud takes a few minutes and clicks, for example We want an oracle 
+database, we get it in a few clicks. • Maintenance: You don't have to do lots of maintenance, cloud 
+providers take care of maintenance.  
+• Security: Initially customers felt cloud is not secure, but time has proved, cloudis more secure than 
+their own data centers. Cloud offers lots of security controls to safeguard our applications and data. 
+• Global Scale: You may have business in one region today and you can scale your business globally.  
+2)What are the Cloud Services offering? 
+A) Cloud offers so many services, those services are offered in of of the following pattern 
+laaS (Infrastructure as a Service): AWS offers virtual machines for example; we have to patch and do 
+other maintenance.  
+PaaS (Platform as a Service): AWS offers the platform, for example "Elastic Beanstalk", this service 
+directly offers tomcat, docker, IIS, and other platforms,so we do not have to setup VM, do patching, etc.  
+• SaaS (Software as a Service): The application itself is provided by the vendor, we consume it using a 
+web browser or mobile app, for example Gmail, Facebook, LinkedIn, etc. 
+3)Difference between Region and Availability zone? 
+A) • Region: Region means a geographical location, for example "Mumbai" is aws region. Region is 
+usually a combination of 2 or more Availability Zones.  
+• Availability Zone: Each region is compound of two or more Availability Zones, AZS are meant 
+for HA (High Availability) 
+4)How to resize the ec2 instance? 
+A) Identify the EC2 instance that you want to resize and ensure that it is in a "Change Instance 
+Type". Choose the new instance type that you want to resize stopped state, if possible. Choose 
+the option to Actions"-"Instance Settings"> to. Review and confirm the changes to resize the EC2 
+instance 
+5)How to create a custom AMI? 
+A) Launch an EC2 instance based on an existing AMI that matches your desired operating system 
+and software configuration Customize the instance to meet your specific requirement, installing 
+additional software packages, configuring system settings, and applying security patches. Select 
+the instance you want to use to create custom AMI and choose "Create image from the 
+"Actions" menu. 
+6)How to take EC2 instance backup? 
+A) Taking ECZ backup is nothing but creating AMI (Amazon Machine Image) 
+7)Different ways to connect to ec2 instance if we lost the pem file? 
+A) If you have lost the PEM file for your EC2 instance, there are several ways to connectto your 
+instance:  
+• Recover the PEM file from a backup, if available. 
+• Create a new EC2 instance and attach the EBS volume of the original instance to it to access the data. 
+Use AWS Systems Manager Session Manager to connect to your EC2 instance 
+without requiring a key pair. Use EC2 Instance connect to your EC2 instance without requiring a key pair. 
+8)What is AWS instance store? 
+AWS Instance Store provides temporary, locally-attached block-level storage to EC2 instances for 
+applications requiring high I/O performance and low-latency access. It's physically attached to the host 
+server, providing a direct and dedicated connection to the instance. However, its data is lost when the 
+instance is stopped or terminated. It can be used in conjunction with Amazon EBS to provide durable 
+and scalable storage. 
+9)What are different Instance types? 
+A) General Purpose instances: These instances are suitable for a broad range of workloads, including 
+web servers, small databases, and development environments. 
+Compute Optimized instances. These instances are designed for compute intensive workloads such as 
+high-performance computing batch processing and video encoding 
+Memory-Optimized instances: These instances are optimized for workloads that require high memory 
+resources, such as in-memory databases and data analytics  
+Storage Optimized Instances: These instances are designed for workloads that require high storage 
+capacity and fast disk performance, such as big data processing and data warehousing GPU Instances: 
+These instances are optimized for workloads that require high-performance graphics processing, such as 
+machine learning and gaming. 
+10)What is the Difference between OnDemand and Reserved instances? 
+On-Demand instances are pay-as-you-go and offer the most flexibility, allowing you to spin up or down 
+instances as needed, without any upfront commitment You pay for the computing resources you 
+consume on an hourly basis, and the pricing can vary depending on demand and availability. 
+Reserved instances, on the other hand, require an upfront payment for a one-or three-year term in 
+exchange for a discount on the hourly usage rate. They are best suited for predictable workloads that 
+require a certain amount of computing capacity over a longer period of time. Reserved instances can 
+offer significant cost savings compared to On-Demand instances over time, but require a commitment 
+upfront. 
+11)Can we use HDD volumes as root volumes? 
+A) • No, only SSD is used. 
+12)What is the difference between Spot Instances and Burstable Instances? 
+Spot instances are a purchasing option that allows you to bid on unused EC2 capacity in the AWS cloud. 
+The hourly rate for a spot instance varies based on supply and demand for that instance type and can be 
+significantly lower than the On-Demand rate. However, AWS can terminate a Spot instance with two 
+minutes of notification when the instances market price exeeds your bid price or when the capacity is no 
+longer available. 
+• Burstable instances, also known as T instances are a type of instance that are designed for workloads 
+that have short-term bursts of CPU usage. These instances offer a baseline level of CPU performance 
+with the ability to burst above the baseline level when needed.  
+13)what is the difference between EBS and EFS? 
+A) EBS provides block-level storage volumes that can be attached to EC2 instances.These volumes 
+act as raw block devices and are used to store data persistently,such as databases or file systems. 
+EBS volumes can be backed up, snapshot, and restored when needed  
+• EFS provides a scalable and fully managed network file system that can be accessed by 
+multiple EC2 instances concurrently. EFS uses the NFS (Network File System) protocol to mount 
+file systems, and it can automatically scale to petabyte-scale storage with high throughout and 
+low latency. 
+14)How to take the backup of EBS volume? 
+To take a backup of an EBS volume in AWS, you can create a snapshot of the volume. Open the Amazon 
+EC2 console, select the EBS volume, choose "Create Snapshot" from the "Actions" menu, and provide a 
+name and description for the snapshot. EBS snapshots are incremental and stored in Amazon $3 for 
+future use. 
+15)What is the different type of EBS volumes? 
+• General Purpose SSD (gp2) 
+• Provisioned IOPS SSD (io1)  
+• Throughput Optimized HDD (st1) 
+• Cold HDD (sc1)  
+• Magnetic (standard) 
+16)What is VPC and Subnets? 
+A) • VPC is a logically isolated virtual network that allows launching resources in a defined set of IP 
+addresses. Subnets are subdivisions of a VPC's IP address range that help allocate and manage IP 
+addresses for resources. Subnets can be created in different Availability Zones for high 
+availability and fault tolerance. 
+17)What is CIDR? 
+A)  CIDR stands for Classless Inter-Domain Routing and is a method used to specify the size of a 
+network's address space. It allows network administrators to specify the number of available IP 
+addresses and divide networks into smaller subnets. CIDR notation is expressed using a 
+combination of an IP address and a subnet mask. 
+18)What is a public subnet and private subnet? 
+A) • Public subnet is exposed to internet. Means EC2 instances with public IP are accessible from 
+the internet. We make a subnet public using internet gateway.  
+• Private subnet is one which is not exposed to the internet. We usually keep private 
+applications like DBS, internal apps in a private subnet 
+19)What is an internet gateway? 
+A) It is a virtual gateway which provides internet connection to VPC and subnets. It provides both 
+inbound and outbound internet communications. One VPC can have only one internet gateway. 
+20)EC2 instances in private subnets want to download patches from the internet, how do you configure 
+this? 
+A) Use NAT instances or NAT gateways. 
+21)In which subnet you put your NAT? 
+A) NAT should be put in a public subnet  
+22)Differences Between NAT instance & NAT Gateway? 
+A) NAT instance and NAT Gateway are used to enable instances in a private subnet to access the 
+internet. NAT Gateway is a fully managed service, highly available. and scalable up to 45 Gbps, 
+while NAT instance requires maintenance and additional configuration for high availability. NAT 
+Gateway is generally more expensive but provides better performance and ease of use, while 
+NAT instance offers more control and customization 
+23)What is EIP (Elastic IP)? 
+A) EIP is a static public IP, it will never change, until you release it. We can detach from an instance 
+and attach to another instance. 
+24)What is the VPC endpoint? 
+A) A VPC endpoint is a service that allows secure and private access to AWS services from a VPC. It 
+eliminates the need for an internet gateway, NAT device, or VPN connection. Traffic flows over 
+the Amazon network instead of the internet, which can improve security and reduce data 
+transfer costs. VPC endpoints can be created for various AWS services and are highly available 
+and scalable. 
+25)What is VPC peering? 
+A)  VPC peering connects two Amazon VPCs privately, allowing instances to communicate using 
+private IP addresses. It is established by defining a peering connection and specifying the 
+allowed IP ranges. 
+26)What is the difference between security groups and NACL ? 
+A) Security groups and Network Access Control Lists (NACLS) are both used to control access to 
+resources in an Amazon VPC Security groups operate at the instance level, controlling inbound 
+and outbound traffic based on the IP address, part and protocol, and are stateful, NACLs operate 
+at the subnet level, controlling traffic based on the IP address, port, and protocol and are 
+stateless Security groups provide finer grained control at the instance level, while NACLS provide 
+broader control at the subnet level 
+27)Why we use transit gateway? 
+A) AWS Transit Gateway is a service that simplifies the management of VPC and VPN connections. 
+It connects multiple VPCS and VPNs together and routes traffic using a single gateway. Transit 
+Gateway provides hub and spoke connectivity, reducing the need for multiple VPN connections 
+and network appliances It is used to build a scalable and highly available network architecture 
+that spans multiple accounts and regions. 
+28)What is Load balancing? 
+A) Load balancer acts like a single point of contact for backend ec2 instances. Using load balancer, 
+we achieve HA for our applications Using a load balancer, we scale our applications  
+29)What is the difference between application load balancer and network load balancer? 
+A) Application Load Balancer (ALB) is a Layer 7 load balancer that routes traffic based on content of 
+the request, such as the URL or cookies, while Network Load Balancer (NLB) is a Layer 4 load 
+balancer that routes traffic based on IP protocol data. ALB is designed to handle HTTP/HTTPS 
+traffic and provides advanced features such as path based routing and host-based routing, while 
+NLB is designed to handle TCP/UDP traffic and provides high performance and scalability. ALB 
+supports SSL/TLS offloading, sticky sessions, and integration with AWS services like AWS ECS and 
+AWS EKS, while NLB supports static IP addresses, high throughput, and connectionless load 
+balancing. 
+30)What is Connection draining? 
+A) For example, we set connection draining value as 60 seconds, if we want to ester or if ec2 is 
+unhealthy it can't be suddenly taken out of service, w should give some time for the instance to 
+finish processing inflight requests. 
+31)What is Stickiness? 
+A) By default, requests from a user are distributed to all ec2 instances in the load balancer. But 
+with stickiness we can take a user request to stick to one instance. 
+32)What is Idle Timeout Load balancing?  
+A) Idle Timeout is the number of seconds a connection can be idle before the load balancer closes 
+the connection. 
+33)What is AWS WAF? 
+A)  AWS WAF is a web security service that blocks common web exploits by creating custom rules 
+to block malicious traffic, including SQL injection and cross-site scripting it integrates with AWS 
+services like AWS CloudFront and AWS Application Load Balancer, and can be used to protect 
+both AWS hosted and on- premises web applications. 
+34)What is AWS Auto Scaling Group? 
+A) The idea of autoscaling is to add/remove instances on a need basis. The capacity is dynamically 
+changed by autoscaling, and it is cost effective. Auto scaling itself is free, but autoscaling 
+launches EC2 for that we have to pay. It provides better fault tolerance, that is if an instance is 
+unhealthy, it terminates and launches a new one. It provides better availability, that is it always 
+maintains the exact capacity that is needed. 
+35)What is auto Scaling cooldown period? 
+A) In step wise scaling, if two consecutive scaling activities are triggered within a cooldown period, 
+the second one is suppressed. 
+36)What is auto Scaling instance Warmup? 
+A) Instances launched in auto scaling can take some time for initialization and only then its metrics 
+need to be counted in autoscaling. 
+37)What is SNS, SOS, SES? 
+A) Simple Notification Service (SNS) used for notifications, like CPU is high send alerts, Status 
+Checks Failed, send alerts 
+B)  • Simple Email Service (SES) is used for sending and receiving emails. We can choose custom 
+email as a sender email To send emails, we have to verify email or domain.  
+C)  Simple Queue Service (SQS) is used for integrating applications. For example, application one 
+wants to share data with application two. Queues are used for asynchronous integration of 
+applications 
+38)How do you monitor EC2 memory and disk using Cloud Watch? 
+A) By default, Cloud watch does not monitor them, we have to install Cloud watch agent and send 
+custom metrics to Cloud watch. 
+39)How to monitoring EC2 Instance? 
+A) From Cloud watch dashboard metrics→metrics →all metrics→EC2  
+40)How do you monitor EC2 memory and disk using CloudWatch? 
+A) By default, CloudWatch does not monitor them, we have to install CloudWatch agent and send 
+custom metrics to CloudWatch. 
+41)What are the steps to 53 Static Website Hosting? 
+A) Grant public read access for all objects in S3.Upload our website code,Enable static website 
+hosting under bucket properties. 
+42)What are system checks and instance checks in EC2? 
+A) System checks and instance checks are automated processes in EC2 that en instances are 
+running smoothly and communicating properly with other components of the environment 
+System checks verily the underlying host hardware and software, while instance checks verify 
+the instance itself System checks detect and resolve issues that could prevent instances from 
+cunning property, such as network interface problems and insufficient disk space Instance 
+checks verify that instances can connect to the internet, are running the correct security settings, 
+and have no errors in the operating system or software applications. Both system checks and 
+instance checks are crucial for maintaining the reliability and availability of EC2 instances. 
+43)What is the difference between the IAM User and IAM role? 
+A) IAM users have permanent AWS identities, while IAM roles have temporary AWS identities. IAM 
+users represent individuals who need access to resources, while IAM roles represent 
+applications or services. IAM users are associated with specific permissions and policies, while 
+AM roles are associated with policies that determine what actions the role can perform IAM 
+roles provide an extra layer of security by allowing access to resources only for a limited time 
+period. 
+44)How to perform the cross-account access in AWS? 
+A) Cross-account access in AWS enables users in one AWS account to access resources in another 
+account. This can be done using IAM Roles, AWS STS, AWS Resource Access Manager (RAM), or 
+AWS Organizations. To set up cross-account access, appropriate (AM policies and roles must be 
+created, trust relationships between accounts must be configured, and security best practices 
+should be followed, such as using MFA authentication and restricting access to necessary 
+resources Cross-account access can help simplify resource management and reduce the need for 
+multiple AWS accounts. 
+45)What is Elastic cache in AWS? 
+A) It is an in-memory database, instead of storing data on disk, it stores data in RAM, it offers fast 
+access to data. It is used to solve performance issues at application level. 
+46)What are AWS CloudTrail? 
+A) AWS CloudTrail is a service that records API calls made to AWS services and provides a complete 
+audit trail of events. CloudTrail can be used for security analysis, resource change tracking, and 
+compliance auditing. CloudTrail logs include details such as the identity of the caller, the time of 
+the call, the source IP address, and the request parameters. Cloud Trail can be integrated with 
+other AWS services, such as AWS CloudWatch, to trigger alerts and automated responses based 
+on specific events 
+47)How to configure Send Email every time EC2 instance is launched? 
+A) To send an email every time an EC2 instance is launched, you can create an AWS Lambda 
+function triggered by an EC2 CloudTrail event. The function can use an email service, such as 
+Amazon SES, to send the email. Then, configure an Amazon CloudWatch rule to trigger the 
+Lambda function whenever an EC2 instance is launched Finally, test the setup by launching an 
+EC2 instance and verifying that you receive the email notification. 
+48)If we need an DB engine not supported by RDS, then how to use that? 
+A) Launch EC2 and Install and configure. 
+49)What is RDS Multi AZ Deployment? 
+A) RDS Multi-AZ Deployment is a feature of Amazon RDS that provides automatic, synchronous 
+replication of a database to a standby instance in a different Availability Zone. This enhances the 
+availability and durability of the database in case of a primary AZ failure Failover is automatic 
+and transparent to the user 
+50)What is RDS Read Replicas in AWS? 
+A) RDS Read Replicas is a feature of Amazon RDS that allows read scalability for a database 
+instance. Read Replicas are read-only copies of the primary instance that handle read traffic and 
+reduce the load on the primary instance. They are updated asynchronously, so data consistency 
+may be slightly delayed. Read Replicas are available for several RDS database engines. 
+51)How to take RDS automatic backup? 
+A) To enable automatic backups for an RDS instance, go to the Amazon RDS console and select the 
+instance Click the "Modify button and scroll down to the "Backup" section Set the desired 
+backup retention period and backup window and then click "Apply immediately" and "Modify 08 
+instanor HDS will now tak automated backups of the instance within the specified retention 
+period and backup window. You can view and manage the backups in the "Backups" section of 
+the RDS console. 
+52)What is 53 in AWS? Why we use it? 
+A) Amazon 53 Simple Storage Servicel is a scalable, durable, and secure object storage service in 
+AWS. It is used to store and retrieve any amount of data from anywhere on the internet, such as 
+fites, images, videos, backups, and logs. 53 is also integrated with other AWS services, providing 
+a simple and cost-effective way to store and access data across different AWS services. It offers 
+a variety of storage classes and features such as versioning lifecycle policies, and encryption to 
+customize storage according to specific needs 53 can also be used to host static websites. 
+53)S3 Bucket Versioning? 
+A) 53 Bucket Versioning is a feature in Amazon 53 that enables keeping multiple versions of an 
+object in the same bucket. When enabled, every write operation on an object creates a new 
+version of that object instead of overwriting the existing object. This provides additional 
+protection against accidental deletion or modification of objects and allows retrieving previous 
+versions of an object Versioning can be enabled for a bucket through the 53 management 
+console or programmatically. 
+54)What is AWS Snowball? 
+A) AWS Snowball is a data transport solution that accelerates moving terabytes to petabytes of 
+data into and out of AWS using storage appliances designed to be secure for physical transport. 
+55)What are the S3 storage classes in AWS? 
+A) 53 Standard for frequently accessed data  
+B) S3 Intelligent Tiering for data with unknown or changing access patterns  
+C) S3 Standard-Infrequent Access (53 Standard-1A): for infrequently accessed data with rapid 
+access times 
+D) S3 One Zone-Infrequent Access (53 One Zone-IA): for infrequently accessed, non critical data 
+that can be recreated if lost 
+E) S3 Glacier: for long-term data archival and digital preservation  
+F) 53 Glacier Deep Archive for long-term storage of data that can be restored within 12 hours 
+56)What is 53 Lifecycle rules? 
+A) Use lifecycle rules to define actions you want Amazon S3 to take during an object's lifetime such 
+as transitioning objects to another storage class, archiving them, or deleting them after a 
+specified period of time. For example, we store application logs in $3, we may need to access 
+them frequently when logs are new, and when they become old, we do not access them 
+frequently, so to optimize the cost, we want to set following rules on objects 
+• After 30 days move to Standard IA 
+• After 60 days move to Glacier 
+• After 90 days move to Glacier Deep Archive 
+• After 1 year they expire 
+57)What is Route53 in AWS? 
+A) Route53 is a highly available and scalable DNS web service offered by AWS. It enables routing 
+end-users to Internet applications by translating human- readable domain names into IP 
+addresses Route53 offers several features such as domain registration, DNS routing, health 
+checks, fallover, and traffic management to improve the availability, performance, and security 
+of your web applications or websites. It's integrated with other AWS services such as Elastic 
+Load Balancing, AWS Certificate Manager, and CloudFront to provide a complete solution for 
+hosting and managing your web applications or websites. 
+58)What is the difference between aname and cname records? 
+A) The A record (Address Record) and CNAME (Cahonical Namel record are both types of DNS 
+records used in Route53 to map domain names to IP addresses The A record maps a domain 
+name to an IPv4 address, while the CNAME record maps a domain name to another domain 
+name. A record is used to map a domain name directly to an IP address, whereas CNAME record 
+is used to map a domain name to another domain name, and then let the other domain name 
+resolve to the P address. A record can be used to map a root domain, whereas a CNAME ricord 
+cannot. A record is faster to resolve than a CNAME record, as it requires only one DNS lookup, 
+while CNAME requires two 
+59)What are the routing policies in Route53? 
+A)  Route53 offers multiple routing policies that allow you to manage traffic flow for your DNS 
+queries: These policies include Simple routing, Weighted routing Latency-based routing, Failover 
+routing, Geolocation routing, and multi-value answer routing With these policies you can control 
+traffic distribution, minimize latency, improve application availability and resiliency, and respond 
+to network outages. Choosing the right routing policy depends on your use case, traffic patterns, 
+and geographic distribution of your end-users. By leveraging these policies, you can optimize the 
+performance and reliability of your applications or websites. 
+60)What are AWS CloudFront? Why we use it? 
+A) AWS CloudFront is a content delivery network that provides a globally distributed network of 
+caching servers to accelerate the delivery of static and dynamic content. CloudFront improves 
+website/application performance, cost- effectively scales to handle large amounts of traffic, 
+increases reliability and availability, and provides better security by integrating with AWS 
+services like AWS WAF and AWS Shield. By leveraging CloudFront, you can improve user 
+experience, reduce latency, and minimize the load on your application servers, all while ensuring 
+the security and availability of your applications. 
+61)What is CloudFront edge location? 
+A) AWS Cloudfront edge location is a data center located in various geographical ocations around 
+the world. These edge locations cache and distribute conta to end-users with low latency and 
+high performance when a user requests content. CloudFront routes the request to the nearest 
+edge location where content is cached and served to the user. This helps reduce the amount of 
+time takes to retrieve and deliver content, improving performance and reducing latency. 
+62)What is AWS Lambda? 
+A) AWS Lambda is a serverless computing service that allows users to run code without the need to 
+manage servers or infrastructure. It supports multiple programming languages and can be 
+triggered by various events. It is a cost effective solution for running small and infrequent 
+workloads. 
+63)Write a Lambda function to list the $3 buckets and objects? 
+A) import boto3 
+def lambda handler(event, context): 
+s3=boto3.client('s3') 
+response=s3.list_buckets() 
+for bucket in response [‘Buckets’]: 
+print(‘Bucket: {}’. Format(bucket[‘Name’])) 
+objects=s3.list_objects(Bucket=bucket[‘Name']) 
+for obj in objects[‘Contents’]: 
+print(‘Object: {}’.format(obj[‘Key’])) 
